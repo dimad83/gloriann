@@ -1,4 +1,5 @@
 void	ft_foreach(int *tab, int length, void(*f)(int));
+void	ft_putnbr(int nb);
 
 int	main(void)
 {
