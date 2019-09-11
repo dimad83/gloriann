@@ -28,8 +28,11 @@ $(NAME):
 $(OBJECTS_DIRECTORY):
 	@mkdir -p $(OBJECTS_DIRECTORY)
 
-$(OBJECTS_DIRECTORY)%.o :
-	$(SOURCES_DIRECTORY)%.c $(HEADERS)
+# $@ — Имя файла цели, в нашем случае (?) имя .o-файла
+# $< — Имя первого пререквизита из списка пререквизитов, в нашем случае (?) имя .c-файла
+# все автоматические переменные:
+# http://rus-linux.net/nlib.php?name=/MyLDP/algol/gnu_make/gnu_make_3-79_russian_manual.html#SEC101
+$(OBJECTS_DIRECTORY)%.o : $(SOURCES_DIRECTORY)%.c $(HEADERS)
 	@$(CC) $(FLAGS) $(INCLUDES) $< -o $@
 
 clean:
