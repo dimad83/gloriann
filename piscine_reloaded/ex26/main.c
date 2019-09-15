@@ -6,30 +6,45 @@ int ft_count_if(char **tab, int(*f)(char*));
 int	ft_strlen(char *s)
 {
 	int i;
-	
+
 	i = 0;
 	while (s[i])
 		i++;
 	return i;
 }
 
-int		main(void)
+int		main(int argc, char **argv)
 {
-	//char tab[3][3] = {"f", "  ", "gg"};
-	int i;
-	
+	int i, j, slen;
 	char **tab;
-	tab = malloc(sizeof(char*) * 3);
+	int size;
+
+	if (argc < 2)
+		return (0);
+
+	size = argc - 1;
+	tab = malloc(sizeof(char*) * (size + 1));
 	i = 0;
-	while (i < 3)
+	while (i < size)
 	{
-		tab[i] = malloc(sizeof(char) * 100);
+		slen = 0;
+		while (argv[i + 1][slen])
+		{
+			slen++;
+		}
+		tab[i] = malloc(sizeof(char) * (slen + 1));
+		j = 0;
+		while (j < slen)
+		{
+			tab[i][j] = argv[i + 1][j];
+			j++;
+		}
+		tab[i][j] = '\0';
 		i++;
 	}
-	tab[0] = "55";
-	tab[1] = "g";
-	tab[2] = "";
-	printf("%d", ft_count_if(tab, &ft_strlen));
+	tab[i] = 0;
+	i =  ft_count_if(tab, &ft_strlen);
+	printf("%d", i);
 	
 	return (0);
 }

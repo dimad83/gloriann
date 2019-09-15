@@ -1,46 +1,32 @@
 NAME = libft.a
-CC = gcc
-FLAGS = -Wall -Werror -Wextra
-INCLUDES = -I$(HEADERS_DIRECTORY)
-HEADERS_LIST = libft.h
-HEADERS_DIRECTORY = includes/
-HEADERS = $(addprefix $(HEADERS_DIRECTORY), $(HEADERS_LIST))
-SOURCES_DIRECTORY = srcs/
-SOURCES_LIST = ft_putchar.c\
-	ft_putstr.c\
-	ft_strcmp.c\
-	ft_strlen.c\
-	ft_swap.c
-SOURCES = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LIST))
-OBJECTS_DIRECTORY = objects/
-OBJECTS_LIST = $(patsubst %.c, %.o, $(SOURCES_LIST))
-OBJECTS	= $(addprefix $(OBJECTS_DIRECTORY), $(OBJECTS_LIST))
 
-.PHONY: all clean fclean re
+INCLUDES = -I includes
+
+GCC = gcc
+
+FLAG = -Wall -Wextra -Werror -c
+
+CFILE = srcs/ft_putchar.c \
+	  srcs/ft_putstr.c \
+	  srcs/ft_strcmp.c \
+	  srcs/ft_strlen.c \
+	  srcs/ft_swap.c
+
+OFILE = $(CFILE:srcs/%.c=%.o)
 
 all: $(NAME)
 
-$(NAME): 
-	$(OBJECTS_DIRECTORY) $(OBJECTS)
-	@ar rc $(NAME) $(OBJECTS)
-	@ranlib $(NAME)
-
-$(OBJECTS_DIRECTORY):
-	@mkdir -p $(OBJECTS_DIRECTORY)
-
-# $@ — Имя файла цели, в нашем случае (?) имя .o-файла
-# $< — Имя первого пререквизита из списка пререквизитов, в нашем случае (?) имя .c-файла
-# все автоматические переменные:
-# http://rus-linux.net/nlib.php?name=/MyLDP/algol/gnu_make/gnu_make_3-79_russian_manual.html#SEC101
-$(OBJECTS_DIRECTORY)%.o : $(SOURCES_DIRECTORY)%.c $(HEADERS)
-	@$(CC) $(FLAGS) $(INCLUDES) $< -o $@
+$(NAME):
+	$(GCC) $(FLAG) $(CFILE) $(INCLUDES)
+	ar rc $(NAME) $(OFILE)
+	ranlib $(NAME)
 
 clean:
-	@rm -rf $(OBJECTS_DIRECTORY)
+	rm -rf $(OFILE)
 
 fclean: clean
-	@rm -f $(NAME)
+	rm -rf $(NAME)
 
-re:
-	@$(MAKE) fclean
-	@$(MAKE) all
+re: fclean all
+
+.PHONY: all clean fclean re

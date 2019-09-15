@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_display_file.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gloriann <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/12 23:28:21 by gloriann          #+#    #+#             */
+/*   Updated: 2019/09/12 23:28:58 by gloriann         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 #include <fcntl.h>
 #define BUF_SIZE 4096
 
-void ft_puterror(char *s)
+void	ft_puterror(char *s)
 {
 	while (*s)
 	{
@@ -13,9 +25,9 @@ void ft_puterror(char *s)
 
 void	ft_display_file(char *file_name)
 {
-	int fd;
-	int read_ret;
-	char buf[BUF_SIZE];
+	int		fd;
+	int		read_ret;
+	char	buf[BUF_SIZE];
 
 	if (-1 == (fd = open(file_name, O_RDONLY)))
 	{
@@ -44,5 +56,4 @@ int		main(int argc, char **argv)
 		ft_puterror("Too many arguments.\n");
 	}
 	return (1);
-	
 }
