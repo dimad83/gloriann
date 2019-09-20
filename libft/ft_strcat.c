@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gloriann <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/20 19:50:11 by gloriann          #+#    #+#             */
-/*   Updated: 2019/09/20 19:53:56 by gloriann         ###   ########.fr       */
+/*   Created: 2019/09/20 21:38:54 by gloriann          #+#    #+#             */
+/*   Updated: 2019/09/20 22:07:43 by gloriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-void	ft_putstr(char const *s)
+char	*ft_strcat(char *restrict s1, const char *restrict s2)
 {
-	while (*s && s)
-		ft_putchar(*s++);
+	char *res;
+
+	res = s1;
+	while (*res)
+		res++;
+	while (*s2)
+		*res++ = *s2++;
+	*res = 0;
+	return (s1);
 }

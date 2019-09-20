@@ -1,8 +1,15 @@
 NAME = libft.a
 
-SRCS = ft_putchar.c \
+SRCS = ft_bzero.c \
+	ft_memset.c \
+	ft_putchar.c \
 	ft_putchar_fd.c \
 	ft_putstr.c \
+	ft_strcat.c \
+	ft_strlcat.c \
+	ft_strlen.c \
+	ft_strncat.c
+
 
 OBJECTS = $(patsubst %.c, %.o, $(SRCS))
 

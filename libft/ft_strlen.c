@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gloriann <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/20 19:50:11 by gloriann          #+#    #+#             */
-/*   Updated: 2019/09/20 19:53:56 by gloriann         ###   ########.fr       */
+/*   Created: 2019/09/20 21:10:46 by gloriann          #+#    #+#             */
+/*   Updated: 2019/09/20 21:37:01 by gloriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+size_t	ft_strlen(const char *s)
 {
-	while (*s && s)
-		ft_putchar(*s++);
+	size_t i;
+
+	i = 0;
+	while (*s++)
+		i++;
+	return (i);
 }
