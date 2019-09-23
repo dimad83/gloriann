@@ -1,23 +1,21 @@
 #include "libft.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-size_t	ft_strlcat(char *restrict s1, const char *restrict s2, size_t n);
-
-int main(void)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t n);
+char	*strnstr(const char *s, const char *find, size_t slen);
+int main(int argc, char **argv)
 {
-	char *dest;
+	int n;
 
-	dest = (char *)malloc(sizeof(*dest) * 15);
-
-	ft_memset(dest, 0, 15);
-	ft_memset(dest, 'r', 4);
-	printf("%s\n", dest);
-	printf("%zu\n%s\n\n", ft_strlcat(dest, "1234", 100), dest);
-
-	ft_memset(dest, 0, 15);
-	ft_memset(dest, 'r', 4);
-	printf("%s\n", dest);
-	printf("%zu\n%s\n", strlcat(dest, "1234", 100), dest);
-	//printf("%zu\n", sizeof(dest) - 1);
+	if (argc == 4)
+	{
+		n = atoi(argv[3]);
+		printf("strnstr\(\'%s', \'%s\', %d)\n", argv[1], argv[2], n);
+		printf("my  : %s\n", ft_strnstr(argv[1], argv[2], n));
+		printf("orig: %s\n", strnstr(argv[1], argv[2], n));
+		//printf("my  : %s\n", ft_strstr(argv[1], argv[2]));
+		//printf("orig: %s\n", strstr(argv[1], argv[2]));
+	}
 }
