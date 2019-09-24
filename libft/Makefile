@@ -23,13 +23,21 @@ SRCS = ft_bzero.c \
 	ft_strrchr.c \
 	ft_strstr.c \
 	ft_strnstr.c \
+	ft_atoi.c \
 	ft_isalnum.c \
 	ft_isalpha.c \
 	ft_isascii.c \
 	ft_isdigit.c \
 	ft_isprint.c \
+	ft_isspace.c \
 	ft_tolower.c \
-	ft_toupper.c
+	ft_toupper.c \
+	ft_memalloc.c \
+	ft_memdel.c \
+	ft_strnew.c \
+	ft_strdel.c \
+	ft_strclr.c \
+	ft_strtrim.c
 
 OBJECTS = $(patsubst %.c, %.o, $(SRCS))
 
