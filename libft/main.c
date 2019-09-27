@@ -3,10 +3,16 @@
 #include <stdlib.h>
 #include <string.h>
 
-char	*ft_strtrim(char const *s);
-
 int main(int argc, char **argv)
 {
+	char	*s;
+	int		n;
+
 	if (argc == 2)
-		printf("ft_strtrim: '%s' => '%s'\n", argv[1], ft_strtrim(argv[1]));
+	{
+		s = argv[1];
+		n = atoi(s);
+		s = ft_itoa(n);
+		printf("orig: '%d'\nitoa: '%s'\n", n, s);
+	}
 }
