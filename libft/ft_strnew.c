@@ -1,13 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gloriann <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/28 07:18:23 by gloriann          #+#    #+#             */
+/*   Updated: 2019/09/28 10:41:56 by gloriann         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <stdlib.h>
 
-void	*ft_strnew(size_t size)
+char	*ft_strnew(size_t size)
 {
-	char	*s;
-
-	s = (char *)malloc(size + 1);
-	if (s != NULL)
-		ft_memset(s, 0, size);
-	return (s);
+	return ((char *)ft_memalloc(size + 1));
 }
-

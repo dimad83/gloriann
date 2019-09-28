@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gloriann <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/28 07:21:30 by gloriann          #+#    #+#             */
+/*   Updated: 2019/09/28 11:58:11 by gloriann         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <stdlib.h>
 
-size_t get_num_substrings(char const *s, char c)
+static size_t	get_num_substrings(char const *s, char c)
 {
-	size_t  i;
-	size_t  num;
-	size_t  len;
+	size_t	i;
+	size_t	num;
+	size_t	len;
 
 	i = 0;
 	num = 0;
@@ -22,13 +34,12 @@ size_t get_num_substrings(char const *s, char c)
 	return (num);
 }
 
-
-char **get_substrings(char const *s, char c, char **res)
+static char		**get_substrings(char const *s, char c, char **res)
 {
-	size_t  i;
-	size_t  len;
-	size_t  j;
-	size_t  start;
+	size_t	i;
+	size_t	len;
+	size_t	j;
+	size_t	start;
 
 	i = 0;
 	j = 0;
@@ -48,7 +59,7 @@ char **get_substrings(char const *s, char c, char **res)
 	return (res);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
 	size_t	num;
 	char	**res;
@@ -57,5 +68,5 @@ char	**ft_strsplit(char const *s, char c)
 	res = (char **)malloc(sizeof(char **) * num + 1);
 	if (res)
 		res = get_substrings(s, c, res);
-	return res;
+	return (res);
 }

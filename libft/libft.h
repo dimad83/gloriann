@@ -6,7 +6,7 @@
 /*   By: gloriann <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/20 19:52:13 by gloriann          #+#    #+#             */
-/*   Updated: 2019/09/20 23:34:57 by gloriann         ###   ########.fr       */
+/*   Updated: 2019/09/28 10:36:33 by gloriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int		ft_toupper(int c);
 
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
-void	*ft_strnew(size_t size);
+char	*ft_strnew(size_t size);
 void	ft_strdel(char **as);
 void	ft_strclr(char *s);
 char	*ft_strtrim(char const *s);
@@ -69,8 +69,5 @@ void	ft_putnbr_fd(int n, int fd);
 void	ft_putnbr(int n);
 char	**ft_strsplit(char const *s, char c);
 char	*ft_itoa(int n);
-
-
-
 
 #endif
