@@ -1,25 +1,31 @@
 #include "get_next_line.h"
 
-void    ft_errdie(char *msg)
+void    ft_puterror(char *msg)
 {
 	ft_putstr_fd("Error: ", 2);
 	ft_putendl_fd(msg, 2);
-	return(-1);
 }
 
 int		get_next_line(const int fd, char **line)
 {
 	static char	*remains;
 	char	buf[BUFF_SIZE + 1];
+	char	*delimeter_ptr;
+	char	*res
+
 
 	//buf = ft_strnew(BUFF_SIZE);
-	if (fd == NULL)
-		ft_errdie("No pointer to a file.");
+	/*if (fd == NULL)
+	{
+		ft_puterror("No pointer to a file.");
+		return(-1);
+	}*/
 	if (remains == NULL)
 		remains = ft_strnew(0);
 	while (1)
 	{
-		if (delimeter_ptr = ft_strchr(remains, '\n'))
+		delimeter_ptr = ft_strchr(remains, '\n');
+		if (delimeter_ptr != NULL)
 		{
 			*line = remains;
 			*line[delimeter_ptr - res] = '\0';
