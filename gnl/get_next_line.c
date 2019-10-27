@@ -9,10 +9,10 @@ void    ft_puterror(char *msg)
 int		get_next_line(const int fd, char **line)
 {
 	static char	*remains;
-	char	buf[BUFF_SIZE + 1];
-	char	*delimeter_ptr;
-	char	*res
-
+	char		*remains_buf;
+	char		buf[BUFF_SIZE + 1];
+	char		*delimeter_ptr;
+	ssize_t		readed_size;
 
 	//buf = ft_strnew(BUFF_SIZE);
 	/*if (fd == NULL)
@@ -20,6 +20,7 @@ int		get_next_line(const int fd, char **line)
 		ft_puterror("No pointer to a file.");
 		return(-1);
 	}*/
+	readed_size = 0;
 	if (remains == NULL)
 		remains = ft_strnew(0);
 	while (1)
@@ -27,8 +28,7 @@ int		get_next_line(const int fd, char **line)
 		delimeter_ptr = ft_strchr(remains, '\n');
 		if (delimeter_ptr != NULL)
 		{
-			*line = remains;
-			*line[delimeter_ptr - res] = '\0';
+			*line = ft_strndup(remains, delimeter_ptr - remains);
 			remains = delimeter_ptr + 1;
 			return (1);//a line has been read
 		}
@@ -46,4 +46,5 @@ int		get_next_line(const int fd, char **line)
 			free(remains);
 			remains = remains_buf;
 		}
+	}
 }

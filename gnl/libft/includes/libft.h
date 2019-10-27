@@ -6,7 +6,7 @@
 /*   By: gloriann <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/20 19:52:13 by gloriann          #+#    #+#             */
-/*   Updated: 2019/09/28 10:36:33 by gloriann         ###   ########.fr       */
+/*   Updated: 2019/10/27 12:22:59 by gloriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
-int		ft_isspace(int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 
@@ -69,5 +68,8 @@ void	ft_putnbr_fd(int n, int fd);
 void	ft_putnbr(int n);
 char	**ft_strsplit(char const *s, char c);
 char	*ft_itoa(int n);
+
+char	*ft_strndup(const char *s, size_t n);
+int		ft_isspace(int c);
 
 #endif

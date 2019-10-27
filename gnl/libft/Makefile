@@ -52,7 +52,8 @@ SRC = ft_bzero.c \
 	ft_putnbr_fd.c \
 	ft_putnbr.c \
 	ft_strsplit.c \
-	ft_itoa.c
+	ft_itoa.c \
+	ft_strndup.c
 
 OBJDIR = objs
 SRCDIR = srcs

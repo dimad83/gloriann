@@ -1,19 +1,19 @@
 #include "get_next_line.h"
 
-int		main(int ac, char **av)
+int		main(int argc, char **argv)
 {
 	int		fd;
 	char	*line;
 
-	if (ac > 2)
+	if (argc > 2)
 	{
 		ft_putstr("WARNING : Either read a File or pipe a text into test_gnl");
 		return (0);
 	}
-	else if (ac == 1)
+	else if (argc == 1)
 		fd = 0;
-	else if (ac == 2)
-		fd = open(av[1], O_RDONLY);
+	else if (argc == 2)
+		fd = open(argv[1], O_RDONLY);
 	else
 		return (2);
 	while (get_next_line(fd, &line))
@@ -22,6 +22,6 @@ int		main(int ac, char **av)
 		free(line);
 	}
 	free(line);
-	if (ac == 2)
+	if (argc == 2)
 		close(fd);
 }
