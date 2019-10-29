@@ -13,11 +13,6 @@ int		get_next_line(const int fd, char **line)
 	char		*delimeter_ptr;
 	int			readed_size;
 
-	if (fd == -1)
-	{
-		ft_puterror("File wasn't opened.");
-		return(-1);
-	}
 	readed_size = -1;
 	if (remains == NULL)
 		remains = ft_strnew(0);
@@ -39,6 +34,8 @@ int		get_next_line(const int fd, char **line)
 		else
 		{
 			readed_size = read(fd, buf, BUFF_SIZE);
+			if (readed_size == -1)
+				return (-1);//error
 			buf[readed_size] = '\0';
 			remains = ft_strjoin(remains, buf);
 		}
