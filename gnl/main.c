@@ -4,6 +4,7 @@ int		main(int argc, char **argv)
 {
 	int		fd;
 	char	*line;
+	int 	res;
 
 	if (argc > 2)
 	{
@@ -16,10 +17,12 @@ int		main(int argc, char **argv)
 		fd = open(argv[1], O_RDONLY);
 	else
 		return (2);
-	while (get_next_line(fd, &line))
+	while ((res = get_next_line(fd, &line)) != -1)
 	{
 		ft_putendl(line);
 		free(line);
+		if (res == 0) // конец
+			break;
 	}
 	free(line);
 	if (argc == 2)
