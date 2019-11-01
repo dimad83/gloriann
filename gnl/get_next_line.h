@@ -9,6 +9,12 @@
 # include <stdlib.h>
 # include "libft.h"
 
+typedef struct		s_content
+{
+	char			*remains;
+	size_t			fd;
+}					t_content;
+
 int		get_next_line(const int fd, char **line);
 
 #endif

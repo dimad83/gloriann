@@ -6,7 +6,7 @@
 /*   By: gloriann <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/20 19:52:13 by gloriann          #+#    #+#             */
-/*   Updated: 2019/10/27 12:22:59 by gloriann         ###   ########.fr       */
+/*   Updated: 2019/11/01 10:28:12 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,20 @@ void	ft_putnbr_fd(int n, int fd);
 void	ft_putnbr(int n);
 char	**ft_strsplit(char const *s, char c);
 char	*ft_itoa(int n);
+
+typedef struct		s_list
+{
+	void			*content;
+	size_t			content_size;
+	struct s_list	*next;
+}					t_list;
+
+t_list	*ft_lstnew(void const *content, size_t content_size);
+void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void	ft_lstadd(t_list **alst, t_list *new);
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list	* ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 char	*ft_strndup(const char *s, size_t n);
 int		ft_isspace(int c);
