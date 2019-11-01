@@ -13,6 +13,8 @@ int		get_next_line(const int fd, char **line)
 	char		*delimeter_ptr;
 	int			readed_size;
 
+	if (line == NULL || fd < 0)
+		return (-1); //error
 	readed_size = -1;
 	if (remains == NULL)
 		remains = ft_strnew(0);
@@ -41,7 +43,7 @@ int		get_next_line(const int fd, char **line)
 		}
 	}
 }
-
+/*
 int		get_next_line_multi(const int fd, char **line)
 {
 	static t_list	*list;
@@ -90,3 +92,4 @@ int		get_next_line_multi(const int fd, char **line)
 		}
 	}
 }
+*/
