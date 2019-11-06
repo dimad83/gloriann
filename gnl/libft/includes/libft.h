@@ -6,7 +6,7 @@
 /*   By: gloriann <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/20 19:52:13 by gloriann          #+#    #+#             */
-/*   Updated: 2019/11/01 10:28:12 by null             ###   ########.fr       */
+/*   Updated: 2019/11/06 15:45:30 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	*ft_memmove(void *dst, const void *src, size_t n);
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_putchar(char c);
 void	ft_putchar_fd(char c, int fd);
-void	ft_putnbr(int n);
 void	ft_putstr(char const *s);
 char	*ft_strcat(char *s1, const char *s2);
 char	*ft_strdup(const char *s);
@@ -83,7 +82,6 @@ void	ft_lstadd(t_list **alst, t_list *new);
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list	* ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
-char	*ft_strndup(const char *s, size_t n);
 int		ft_isspace(int c);
 
 #endif

@@ -1,46 +1,37 @@
-#include <string.h>
-#include <stdio.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include "gnl.h"
+#include "get_next_line.h"
 
-/*
-** 1 line with 8 chars without Line Feed
-*/
-
-int				main(void)
+int		main(int argc, char **argv)
 {
-	char		*line;
-	int			fd;
-	int			ret;
-	int			count_lines;
-	char		*filename;
-	int			errors;
+	int		fd;
+	char	*line;
+	int 	res;
 
-	filename = "gnl7_1.txt";
-	fd = open(filename, O_RDONLY);
-	if (fd > 2)
+	if (argc > 2)
 	{
-		count_lines = 0;
-		errors = 0;
-		line = NULL;
-		while ((ret = get_next_line(fd, &line)) > 0)
-		{
-			if (count_lines == 0 && strcmp(line, "12345678") != 0)
-				errors++;
-			count_lines++;
-			if (count_lines > 50)
-				break ;
-		}
-		close(fd);
-		if (count_lines != 1)
-			printf("-> must have returned '1' once instead of %d time(s)\n", count_lines);
-		if (errors > 0)
-			printf("-> must have read \"12345678\" instead of \"%s\"\n", line);
-		if (count_lines == 1 && errors == 0)
-			printf("OK\n");
+		ft_putstr("WARNING : Either read a File or pipe a text into test_gnl");
+		return (0);
 	}
+	else if (argc == 1)
+		fd = 0;
+	else if (argc == 2)
+		fd = open(argv[1], O_RDONLY);
 	else
-		printf("An error occured while opening file %s\n", filename);
-	return (0);
+		return (2);
+	while ((res = get_next_line(fd, &line)) != -1)
+	{
+		ft_putendl(line);
+		ft_putendl("line was printed");
+		free(line);
+		ft_putendl("line was freed");
+		if (res == 0) // конец
+			break;
+	}
+	//free(line);
+	ft_putendl("line was freed again");
+	if (argc == 2)
+	{
+		ft_putendl("closing fd...");
+		close(fd);
+		ft_putendl("done");
+	}
 }
