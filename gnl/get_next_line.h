@@ -1,7 +1,10 @@
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-# define BUFF_SIZE 10
+# define BUFF_SIZE 2
 # define ARR_SIZE 255
+# define STATUS_READ 1
+# define STATUS_COMPLETED 0
+# define STATUS_ERROR -1
 
 # include <fcntl.h>
 # include <sys/types.h>

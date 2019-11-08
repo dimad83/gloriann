@@ -6,7 +6,7 @@
 /*   By: gloriann <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/20 19:52:13 by gloriann          #+#    #+#             */
-/*   Updated: 2019/11/06 15:45:30 by null             ###   ########.fr       */
+/*   Updated: 2019/11/07 12:06:11 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_putstr(char const *s);
 char	*ft_strcat(char *s1, const char *s2);
 char	*ft_strdup(const char *s);
 char	*ft_strcpy(char *dst, const char *src);
-size_t	ft_strlcat(char *s1, const char *s2, size_t n);
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlen(const char *s);
 char	*ft_strncat(char *s1, const char *s2, size_t n);
 char	*ft_strncpy(char *dst, const char *src, size_t n);
@@ -83,5 +83,6 @@ void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list	* ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 int		ft_isspace(int c);
+size_t	ft_strlcpy(char *dst, const char *src2, size_t size);
 
 #endif
