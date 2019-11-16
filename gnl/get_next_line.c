@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gloriann <gloriann@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/11/08 19:02:30 by gloriann          #+#    #+#             */
+/*   Updated: 2019/11/08 19:05:11 by gloriann         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
 void	remains_add_buf(char **remains, const int fd, char *buf, int read_size)
@@ -15,7 +27,6 @@ int		result_on_end(char **remains, const int fd, char **line)
 	if (ft_strlen(remains[fd]) == 0)
 	{
 		ft_strdel(&remains[fd]);
-		*line = "";
 		return (STATUS_COMPLETED);
 	}
 	*line = ft_strdup(remains[fd]);
@@ -23,7 +34,7 @@ int		result_on_end(char **remains, const int fd, char **line)
 	return (STATUS_READ);
 }
 
-int 	get_before_n(char **remains, const int fd, char **line)
+int		get_before_n(char **remains, const int fd, char **line)
 {
 	char		*n_ptr;
 
@@ -34,16 +45,16 @@ int 	get_before_n(char **remains, const int fd, char **line)
 	else
 	{
 		*line = ft_strsub(remains[fd], 0, n_ptr - remains[fd]);
-		ft_strlcpy(remains[fd], n_ptr + 1, ft_strlen(n_ptr)); // cut the *line from the beginning of remains, the address of remains isn't changed
+		ft_strlcpy(remains[fd], n_ptr + 1, ft_strlen(n_ptr));
 		return (STATUS_READ);
 	}
 }
 
 int		get_next_line(const int fd, char **line)
 {
-	static char *remains[ARR_SIZE];
-	char buf[BUFF_SIZE + 1];
-	int read_size;
+	static char	*remains[ARR_SIZE];
+	char		buf[BUFF_SIZE + 1];
+	int			read_size;
 
 	if (line == NULL || fd < 0)
 		return (STATUS_ERROR);
