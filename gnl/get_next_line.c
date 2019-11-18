@@ -6,7 +6,7 @@
 /*   By: gloriann <gloriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 19:02:30 by gloriann          #+#    #+#             */
-/*   Updated: 2019/11/08 19:05:11 by gloriann         ###   ########.fr       */
+/*   Updated: 2019/11/18 15:28:40 by gloriann             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int		get_next_line(const int fd, char **line)
 	char		buf[BUFF_SIZE + 1];
 	int			read_size;
 
-	if (line == NULL || fd < 0)
+	if (line == NULL || fd < 0 || fd >= ARR_SIZE)
 		return (STATUS_ERROR);
 	if (remains[fd] == NULL)
 		remains[fd] = ft_strnew(0);
