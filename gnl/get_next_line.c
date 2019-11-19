@@ -6,7 +6,7 @@
 /*   By: gloriann <gloriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 19:02:30 by gloriann          #+#    #+#             */
-/*   Updated: 2019/11/18 15:28:40 by gloriann         ###   ########.fr       */
+/*   Updated: 2019/11/19 14:00:22 by gloriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int		result_on_end(char **remains, const int fd, char **line)
 	if (ft_strlen(remains[fd]) == 0)
 	{
 		ft_strdel(&remains[fd]);
+		*line = ft_strdup("");
 		return (STATUS_COMPLETED);
 	}
 	*line = ft_strdup(remains[fd]);
