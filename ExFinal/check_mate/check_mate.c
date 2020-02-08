@@ -30,6 +30,13 @@ int is_k(int i, int j, int size, char **board)
     return (i >= 0 && i < size && j >= 0 && j < size && board[i][j] == 'K');
 }
 
+int is_figure(int i, int j, int size, char **board)
+{
+	return (i >= 0 && i < size && j >= 0 && j < size &&
+		(board[i][j] == 'K' || board[i][j] == 'P' || board[i][j] == 'B' || board[i][j] == 'R' || board[i][j] == 'Q')
+		);
+}
+
 int is_check_position_p(int i, int j, int size, char **board)
 {
     return (
@@ -91,16 +98,26 @@ int is_check_position_r(int i, int j, int size, char **board)
     check_j = 0;
     while (check_j < size)
     {
-        if (is_k(check_i, check_j, size, board))
-            return (1);
+    	if (!(check_i == i && check_j == j))
+		{
+			if (is_k(check_i, check_j, size, board))
+				return (1);
+			if (is_figure(check_i, check_j, size, board))
+				break;
+		}
         check_j++;
     }
     check_i = 0;
     check_j = j;
     while (check_i < size)
     {
-        if (is_k(check_i, check_j, size, board))
-            return (1);
+		if (!(check_i == i && check_j == j))
+		{
+			if (is_k(check_i, check_j, size, board))
+				return (1);
+			if (is_figure(check_i, check_j, size, board))
+				break;
+		}
         check_i++;
     }
     return (0);
@@ -139,6 +156,13 @@ void check_mate(int size, char **board)
         }
         i++;
     }
+
+    i = 0;
+    while (i < size)
+	{
+		ft_putstr(board[i++]);
+		ft_putchar('\n');
+	}
 
     i = 0;
     while (i < size)
