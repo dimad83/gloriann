@@ -4,5 +4,7 @@
 *.obj
 *.cmake
 *.out
+*.exe
+*.gch
 cmake-build-debug
 CMakeLists.txt
