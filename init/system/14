@@ -1,0 +1,1 @@
+Run the ‘tail -f /var/log/syslog‘ command in background
