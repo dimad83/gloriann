@@ -1,0 +1,156 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+ox-r6.21-school.ru
+Darwin 16.7.0 x86_64
+$> date
+Sat Oct 26 14:40:02 MSK 2019
+$> gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin16.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+$> clang --version
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin16.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/exam_20191026/gloriann
+
+= Git history ==================================================================
+$> git -C /var/folders/q3/czb8ryfd6qj683m27m9kln180000gq/T/tmpC0SaFy/user log --pretty='%H - %an, %ad : %s'
+b39f80de8ed18e77e7a0083774ae6523933addb7 - Exam 42, Sat Oct 26 14:39:26 2019 +0300 : ft_itoa_base
+526c0682a252cce94c9d042276f478da2bddff40 - Exam 42, Sat Oct 26 13:18:22 2019 +0300 : epur
+dbc358054bddf9d891479c2a0ed60366d26e2d71 - Exam 42, Sat Oct 26 12:42:25 2019 +0300 : ft_strdup
+3719528e132f8fc3ca87fb88758320585ff3dbba - Exam 42, Sat Oct 26 12:24:07 2019 +0300 : ft_putstr
+a4a12cf1caeed727c9055fe214e78e6f7110c2d0 - Exam 42, Sat Oct 26 12:13:28 2019 +0300 : hello
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/q3/czb8ryfd6qj683m27m9kln180000gq/T/tmpC0SaFy/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  1139 Oct 26 14:40 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought   102 Oct 26 14:40 epur_str
+drwxr-xr-x  3 deepthought  deepthought   102 Oct 26 14:40 ft_itoa_base
+drwxr-xr-x  3 deepthought  deepthought   102 Oct 26 14:40 ft_putstr
+drwxr-xr-x  3 deepthought  deepthought   102 Oct 26 14:40 ft_strdup
+drwxr-xr-x  3 deepthought  deepthought   102 Oct 26 14:40 hello
+
+/var/folders/q3/czb8ryfd6qj683m27m9kln180000gq/T/tmpC0SaFy/user/epur_str:
+total 8
+-rw-r--r--  1 deepthought  deepthought  679 Oct 26 14:40 epur_str.c
+
+/var/folders/q3/czb8ryfd6qj683m27m9kln180000gq/T/tmpC0SaFy/user/ft_itoa_base:
+total 8
+-rw-r--r--  1 deepthought  deepthought  665 Oct 26 14:40 ft_itoa_base.c
+
+/var/folders/q3/czb8ryfd6qj683m27m9kln180000gq/T/tmpC0SaFy/user/ft_putstr:
+total 8
+-rw-r--r--  1 deepthought  deepthought  87 Oct 26 14:40 ft_putstr.c
+
+/var/folders/q3/czb8ryfd6qj683m27m9kln180000gq/T/tmpC0SaFy/user/ft_strdup:
+total 8
+-rw-r--r--  1 deepthought  deepthought  300 Oct 26 14:40 ft_strdup.c
+
+/var/folders/q3/czb8ryfd6qj683m27m9kln180000gq/T/tmpC0SaFy/user/hello:
+total 8
+-rw-r--r--  1 deepthought  deepthought  73 Oct 26 14:40 hello.c
+ 
+= ft_itoa_base =================================================================
+$> gcc -Wextra -Wall -Werror ft_itoa_base.c main.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./fkklhpifo3inxspwf31c3esi 
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./tv1wte4nn8fdb3h57k9ugkch "21" "2313" "12"
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./dg8ngzbzvljdnkcuqgg7gy5z "2147483647" "10"
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./bfjo56cyet1zlnqcv7gfb922 "-2147483648" "10"
+$> diff -U 3 user_output_test4 test4.output | cat -e
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./2dck6hoyl44b9meb9hhjbuw9 "0" "2"
+$> diff -U 3 user_output_test5 test5.output | cat -e
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./mhf8waql2jml6xqo9v2o9eod "--223" "10"
+$> diff -U 3 user_output_test6 test6.output | cat -e
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./vykiu7d5vwef32pb4gnj6oi8 "748081898" "13"
+$> diff -U 3 user_output_test7 test7.output | cat -e
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./zoco8gia91l846i66uy3bgo7 "712342091" "12"
+$> diff -U 3 user_output_test8 test8.output | cat -e
+
+Diff OK :D
+= Test 9 ===================================================
+$> ./5zn5vdokqy5pius6q3e1he2o "1252415661" "14"
+$> diff -U 3 user_output_test9 test9.output | cat -e
+
+Diff OK :D
+= Test 10 ==================================================
+$> ./hghu58h63w22gzqf9qdjhpfm "1360431402" "4"
+$> diff -U 3 user_output_test10 test10.output | cat -e
+
+Diff OK :D
+= Test 11 ==================================================
+$> ./deltt7izklnera5wfvii0k32 "1233251093" "14"
+$> diff -U 3 user_output_test11 test11.output | cat -e
+
+Diff OK :D
+= Test 12 ==================================================
+$> ./6y8i5o4iv6e4eq6ok8s5buet "1327169596" "7"
+$> diff -U 3 user_output_test12 test12.output | cat -e
+
+Diff OK :D
+= Test 13 ==================================================
+$> ./jnjtbmv9io6xuu70y45lbdvf "98207543" "2"
+$> diff -U 3 user_output_test13 test13.output | cat -e
+
+Diff OK :D
+= Test 14 ==================================================
+$> ./b5b4l75l4u9os984obnlu2pw "-175203599" "10"
+$> diff -U 3 user_output_test14 test14.output | cat -e
+
+Diff OK :D
+= Test 15 ==================================================
+$> ./mxadsy008nod1b3wp4ocl22i "806355384" "5"
+$> diff -U 3 user_output_test15 test15.output | cat -e
+
+Diff OK :D
+= Test 16 ==================================================
+$> ./dib8qwtrlr975vnyf87vy5qa "497760916" "14"
+$> diff -U 3 user_output_test16 test16.output | cat -e
+
+Diff OK :D
+= Test 17 ==================================================
+$> ./jng4vk5foefho7yddr8wel37 "-73570196" "5"
+$> diff -U 3 user_output_test17 test17.output | cat -e
+--- user_output_test17	2019-10-26 14:40:06.000000000 +0300$
++++ test17.output	2019-10-26 14:40:06.000000000 +0300$
+@@ -1 +1 @@$
+-32121134201400$
++122313221241$
+
+Diff KO :(
+Grade: 0
+
+= Final grade: 0 ===============================================================

@@ -1,0 +1,71 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+mi-v2.21-school.ru
+Darwin 16.7.0 x86_64
+$> date
+Sat Oct 26 15:56:56 MSK 2019
+$> gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin16.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+$> clang --version
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin16.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/exam_20191026/gloriann
+
+= Git history ==================================================================
+$> git -C /var/folders/9x/2k6dwm3x71140pxkg55q1lm40000gq/T/tmpYheuRJ/user log --pretty='%H - %an, %ad : %s'
+c47508765712de5afb6970b581e9e64588441e47 - Exam 42, Sat Oct 26 15:50:57 2019 +0300 : rev_wstr
+b39f80de8ed18e77e7a0083774ae6523933addb7 - Exam 42, Sat Oct 26 14:39:26 2019 +0300 : ft_itoa_base
+526c0682a252cce94c9d042276f478da2bddff40 - Exam 42, Sat Oct 26 13:18:22 2019 +0300 : epur
+dbc358054bddf9d891479c2a0ed60366d26e2d71 - Exam 42, Sat Oct 26 12:42:25 2019 +0300 : ft_strdup
+3719528e132f8fc3ca87fb88758320585ff3dbba - Exam 42, Sat Oct 26 12:24:07 2019 +0300 : ft_putstr
+a4a12cf1caeed727c9055fe214e78e6f7110c2d0 - Exam 42, Sat Oct 26 12:13:28 2019 +0300 : hello
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/9x/2k6dwm3x71140pxkg55q1lm40000gq/T/tmpYheuRJ/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  1394 Oct 26 15:56 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought   102 Oct 26 15:56 epur_str
+drwxr-xr-x  3 deepthought  deepthought   102 Oct 26 15:56 ft_itoa_base
+drwxr-xr-x  3 deepthought  deepthought   102 Oct 26 15:56 ft_putstr
+drwxr-xr-x  3 deepthought  deepthought   102 Oct 26 15:56 ft_strdup
+drwxr-xr-x  3 deepthought  deepthought   102 Oct 26 15:56 hello
+drwxr-xr-x  3 deepthought  deepthought   102 Oct 26 15:56 rev_wstr
+
+/var/folders/9x/2k6dwm3x71140pxkg55q1lm40000gq/T/tmpYheuRJ/user/epur_str:
+total 8
+-rw-r--r--  1 deepthought  deepthought  679 Oct 26 15:56 epur_str.c
+
+/var/folders/9x/2k6dwm3x71140pxkg55q1lm40000gq/T/tmpYheuRJ/user/ft_itoa_base:
+total 8
+-rw-r--r--  1 deepthought  deepthought  665 Oct 26 15:56 ft_itoa_base.c
+
+/var/folders/9x/2k6dwm3x71140pxkg55q1lm40000gq/T/tmpYheuRJ/user/ft_putstr:
+total 8
+-rw-r--r--  1 deepthought  deepthought  87 Oct 26 15:56 ft_putstr.c
+
+/var/folders/9x/2k6dwm3x71140pxkg55q1lm40000gq/T/tmpYheuRJ/user/ft_strdup:
+total 8
+-rw-r--r--  1 deepthought  deepthought  300 Oct 26 15:56 ft_strdup.c
+
+/var/folders/9x/2k6dwm3x71140pxkg55q1lm40000gq/T/tmpYheuRJ/user/hello:
+total 8
+-rw-r--r--  1 deepthought  deepthought  73 Oct 26 15:56 hello.c
+
+/var/folders/9x/2k6dwm3x71140pxkg55q1lm40000gq/T/tmpYheuRJ/user/rev_wstr:
+total 8
+-rw-r--r--  1 deepthought  deepthought  971 Oct 26 15:56 rev_wstr.c
+ 
+= rpn_calc =====================================================================
+Nothing turned in
+Grade: 0
+
+= Final grade: 0 ===============================================================
