@@ -3,5 +3,6 @@
 *.o
 *.obj
 *.cmake
+*.out
 cmake-build-debug
 CMakeLists.txt
