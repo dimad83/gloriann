@@ -1,0 +1,11 @@
+#Identify the MAC address of the Wi-Fi card
+ifconfig en1 | grep ether | awk '{print $2}'
+# https://ithelp.brown.edu/kb/articles/find-the-mac-address-of-a-computer-or-device#Mac
+# Locate and open Terminal from Applications->Utilities->Terminal.
+# At the Terminal Prompt, type ifconfig and press Enter. This will list all of your network settings,
+# including the physical addresses of your wired and wireless hardware.
+# To find the Physical Address for your connection:
+# > The wired physical address will be listed under en0
+# > The wireless physical address will be listed under en1
+# Write down or copy/paste the addresses into a document for future reference. You can also directly
+# print it by going to Shell->Print. Keep this document with your important papers.

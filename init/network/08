@@ -1,0 +1,4 @@
+#Find the provider of slash16.org
+get IPs by this query:
+nslookup slash16.org | grep Address | grep -v # | awk '{print $2}'
+use whois for found IPs

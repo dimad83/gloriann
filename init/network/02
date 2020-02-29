@@ -1,6 +1,11 @@
 #Identify and display the Ethernet interface characteristics:
+
 #(a) Identify broadcast address
 ifconfig | grep broadcast | awk '{print $6}'
+
 #(b) Identify all IP adresses which are part of the same subnet
 arp -a
-#arp -a | awk '{print $2}' | sed 's/[()]//g' # to show only ip adresses
+#or if you want to show only IPs:
+# arp -a | grep -v permanent | awk '{print $2}' | sed 's/[()]//g'
+# -v to exclude
+# awk '{print $2}' | sed 's/[()]//g' # to show only ip adresses
