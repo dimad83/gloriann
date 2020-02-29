@@ -1,2 +1,2 @@
 #List all services which are started at boot time and name this kind of services
-systemctl list-unit-files --type=service --type=enabled | grep -v STATE | awk -F'.service' '{print $1}'
+systemctl list-unit-files --type=service --state=enabled | grep -v STATE | awk -F'.service' '{print $1}'
