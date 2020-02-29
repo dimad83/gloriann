@@ -1,0 +1,6 @@
+#Write a script which delete an ACTIVE user on the VM
+USER=$1
+pgrep -u $USER | while read PID; do sudo kill $PID; done
+sudo userdel $USER
+#usermod -aG sudo username
+#Use the su command to switch to the new user account: su - username

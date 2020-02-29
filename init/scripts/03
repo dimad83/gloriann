@@ -1,0 +1,4 @@
+#Three’s a Charm. Write a script of you choice.
+result=$(wget -qO- https://www.cbr-xml-daily.ru/daily_json.js)
+echo -n "USD rate by CBRF: "
+echo "$result" | jq -r '.Valute .USD .Value'
