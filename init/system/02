@@ -1,2 +1,2 @@
 #What command can you use to rename your system?
-hostname new_hostname
+hostname <new_hostname>

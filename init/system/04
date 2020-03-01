@@ -1,2 +1,5 @@
 #What command gives you the time since your system was last booted?
-who -b
+who -b #gives last boot time (SINCE)
+uptime #gives last boot time (SINCE) and time FROM last boot
+#Предлог since указывает на период события по-другому: он передает, когда началось действие,
+# служит его отправной точкой (proof: https://puzzle-english.com/directory/for-and-since)
