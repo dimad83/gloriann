@@ -58,7 +58,8 @@ SRCS = ft_bzero.c \
     ft_lstdel.c \
     ft_lstadd.c \
     ft_lstiter.c \
-    ft_lstmap.c
+    ft_lstmap.c \
+    ft_strlcpy.c
 
 OBJECTS = $(patsubst %.c, %.o, $(SRCS))
 
