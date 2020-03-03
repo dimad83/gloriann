@@ -6,7 +6,7 @@
 /*   By: gloriann <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/28 07:21:11 by gloriann          #+#    #+#             */
-/*   Updated: 2019/09/28 11:59:05 by gloriann         ###   ########.fr       */
+/*   Updated: 2020/03/03 22:38:24 by gloriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ char			*ft_strtrim(char const *s)
 	size_t	len;
 	size_t	i;
 
+	if (s == NULL)
+		return (NULL);
 	first = get_first(s);
 	len = ft_strlen(s);
 	while (len > 0 && is_whitespace(s[len - 1]))

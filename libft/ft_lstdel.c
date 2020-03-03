@@ -6,11 +6,12 @@
 /*   By: gloriann <gloriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 19:17:12 by gloriann          #+#    #+#             */
-/*   Updated: 2019/11/08 19:18:23 by gloriann         ###   ########.fr       */
+/*   Updated: 2020/03/03 21:30:17 by gloriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 /*
 ** Takes as a parameter the address of a pointer to a link and
@@ -24,14 +25,15 @@
 ** to be freed.
 */
 
-void	ft_lstdel(t_list **link, void (*del)(void *, size_t))
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	t_list	*next;
-
-	while (*link != NULL)
+	if (alst == NULL || *alst == NULL)
+		return ;
+	while (*alst)
 	{
-		next = (*link)->next;
-		ft_lstdelone(link, del);
-		*link = next;
+		del((*alst)->content, (*alst)->content_size);
+		free(*alst);
+		*alst = (*alst)->next;
 	}
+	*alst = NULL;
 }

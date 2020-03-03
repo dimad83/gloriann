@@ -6,7 +6,7 @@
 /*   By: gloriann <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/28 07:21:30 by gloriann          #+#    #+#             */
-/*   Updated: 2019/09/28 11:58:11 by gloriann         ###   ########.fr       */
+/*   Updated: 2020/03/03 22:38:24 by gloriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ char			**ft_strsplit(char const *s, char c)
 	size_t	num;
 	char	**res;
 
+	if (s == NULL)
+		return (NULL);
 	num = get_num_substrings(s, c);
 	res = (char **)malloc(sizeof(char **) * num + 1);
 	if (res)

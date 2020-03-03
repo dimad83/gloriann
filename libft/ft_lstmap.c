@@ -6,11 +6,12 @@
 /*   By: gloriann <gloriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 19:17:49 by gloriann          #+#    #+#             */
-/*   Updated: 2019/11/08 19:18:23 by gloriann         ###   ########.fr       */
+/*   Updated: 2020/03/03 22:18:56 by gloriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 /*
 ** Iterates a list lst and applies the function f to each link to
@@ -21,24 +22,19 @@
 ** Param. #2 The address of a function to apply to each link of a list.
 */
 
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+t_list	*ft_lstmap(t_list *lst, t_list *(*f) (t_list *elem))
 {
-	t_list	*new;
-	t_list	*link;
+	t_list	*a;
 
-	new = NULL;
-	link = NULL;
-	while (lst != NULL)
+	if (lst == NULL)
+		return (NULL);
+	else
 	{
-		if (new == NULL)
-		{
-			new = f(lst);
-			link = new;
-		}
-		else
-		{
-			link->next = f(lst);
-		}
+		a = (t_list *)malloc(sizeof(lst));
+		if (a == NULL)
+			return (NULL);
+		a = f(lst);
+		a->next = ft_lstmap(lst->next, f);
+		return (a);
 	}
-	return (new);
 }

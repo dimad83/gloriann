@@ -6,7 +6,7 @@
 /*   By: gloriann <gloriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 19:17:18 by gloriann          #+#    #+#             */
-/*   Updated: 2019/11/08 19:18:23 by gloriann         ###   ########.fr       */
+/*   Updated: 2020/03/03 21:24:24 by gloriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,11 @@
 ** mandatory part).
 */
 
-void	ft_lstdelone(t_list **link, void (*del)(void *, size_t))
+void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
-	del(&((*link)->content), (*link)->content_size);
-	free(*link);
-	*link = NULL;
+	if (alst == NULL || *alst == NULL)
+		return ;
+	del((*alst)->content, (*alst)->content_size);
+	free(*alst);
+	*alst = NULL;
 }

@@ -6,7 +6,7 @@
 /*   By: gloriann <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/28 07:19:14 by gloriann          #+#    #+#             */
-/*   Updated: 2019/09/28 07:19:16 by gloriann         ###   ########.fr       */
+/*   Updated: 2020/03/03 22:33:53 by gloriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_striter(char *s, void (*f)(char *))
 {
+	if (s == NULL || f == NULL)
+		return ;
 	while (*s)
 		f(s++);
 }
