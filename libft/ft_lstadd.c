@@ -18,9 +18,9 @@
 ** Param. #2 The link to add at the beginning of the list.
 */
 
-void	ft_lstadd(t_list **start, t_list *link)
+void	ft_lstadd(t_list **head, t_list *new_elem)
 {
-	if (*start != NULL)
-		link->next = *start;
-	*start = link;
+	if (*head != NULL)
+		new_elem->next = *head;
+	*head = new_elem;
 }

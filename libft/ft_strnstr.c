@@ -3,14 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gloriann <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gloriann <gloriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/28 11:52:31 by gloriann          #+#    #+#             */
-/*   Updated: 2019/09/28 11:52:47 by gloriann         ###   ########.fr       */
+/*   Created: 2020/03/03 20:51:08 by gloriann          #+#    #+#             */
+/*   Updated: 2020/03/03 20:52:41 by gloriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Find the first occurrence of find in s, where the search is limited to the
+** first h_len characters of s.
+*/
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t h_len)
 {
