@@ -17,8 +17,6 @@ SRCS = ft_bzero.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c \
 
 OBJS = $(SRCS:.c=.o)
 
-
-
 all: $(NAME)
 
 $(NAME): $(OBJS)
