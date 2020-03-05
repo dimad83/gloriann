@@ -34,6 +34,9 @@ static size_t	get_num_substrings(char const *s, char c)
 	return (num);
 }
 
+/*
+** TODO : если маллок для ft_strsub не удался, то нужно освободить всю ранее выделенную память
+*/
 static char		**get_substrings(char const *s, char c, char **res)
 {
 	size_t	i;
